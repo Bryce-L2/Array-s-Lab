@@ -1,0 +1,87 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+//Question 1
+    int random[10];
+
+    cout << "Normal: ";
+    for (int i = 0; i < 10; ++i) {
+        cout << random[i] << ", ";
+    }
+    cout << endl;
+
+    cout << "Now backwards: ";
+    for (int i = 9; i >= 0; --i) {
+        cout << random[i] << ", ";
+    }
+    cout << endl;
+
+    int evenCount = 0;
+    for (int i = 0; i < 10; ++i) {
+        if (random[i] % 2 == 0) {
+            evenCount++;
+        }
+    }
+
+    cout << "Total even numbers is: " << evenCount << endl;
+
+// Question 2
+    int day;
+    int sales[] {17, 23, 35, 10, 58};
+    char stopOrNot;
+
+    do {
+        cout << "What day would you like to view: " << endl;
+        cin >> day;
+
+        switch(day){
+            case 1:
+                cout << "Monday's sales were: $" << sales[0] << endl;
+                break;
+            case 2:
+                cout << "Tuesday's sales were: $" << sales[1] << endl;
+                break;
+            case 3:
+                cout << "Wednesday's sales were: $" << sales[2] << endl;
+                break;
+            case 4:
+                cout << "Thursday's sales were: $" << sales[3] << endl;
+                break;
+            case 5:
+                cout << "Friday's sales were: $" << sales[4] << endl;
+                break;
+            default:
+                cout << "Invalid day!" << endl;
+                break;
+        }
+
+        cout << "Do you want to continue or stop? y/n: ";
+        cin >> stopOrNot;
+
+    } while (stopOrNot != 'N' && stopOrNot != 'n');
+
+// Question 3
+    int overFifteen = 0;
+    int size = 20;
+    int ages[size];
+
+    for (int i = 0; i < size; i++) {
+        cout << "Enter age # " << i << ": ";
+        cin >> ages[i];
+    }
+
+    for (int i = 0; i < size; i++){
+        if (ages[i] > 15){
+            overFifteen++;
+        }
+    }
+    cout << "There were " << overFifteen << " people who were older than 15." << endl;
+
+
+//Question 4
+
+    int finalGrade[] {85.8, 93.7, 76, 88.5, 100, 91.3}
+    return 0;
+}
