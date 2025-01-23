@@ -1,9 +1,24 @@
+// Bryce Lombardo
+// Arrays Lab
+// 1/23/2025
+
+
 #include <iostream>
+#include <iomanip> 
+#include <cmath>
 
 using namespace std;
 
+double computeAverage(double scores[], int length) {
+    double total = 0;
+    for (int i = 0; i < length; i++) {
+        total += scores[i];
+    }
+    return round(total / length * 10) / 10; 
+}
+
 int main() {
-//Question 1
+    // Question 1
     int random[10];
 
     cout << "Normal: ";
@@ -27,9 +42,9 @@ int main() {
 
     cout << "Total even numbers is: " << evenCount << endl;
 
-// Question 2
+    // Question 2
     int day;
-    int sales[] {17, 23, 35, 10, 58};
+    int sales[] = {17, 23, 35, 10, 58};
     char stopOrNot;
 
     do {
@@ -62,26 +77,28 @@ int main() {
 
     } while (stopOrNot != 'N' && stopOrNot != 'n');
 
-// Question 3
+    // Question 3
     int overFifteen = 0;
     int size = 20;
-    int ages[size];
+    int ages[20];
 
-    for (int i = 0; i < size; i++) {
-        cout << "Enter age # " << i << ": ";
-        cin >> ages[i];
+    for (int i = 0; i < size; i++) { 
+        cout << "Enter age # " << endl;
+        cin >> ages[i]; 
     }
 
-    for (int i = 0; i < size; i++){
-        if (ages[i] > 15){
+    for (int i = 0; i < size; i++) { 
+        if (ages[i] > 15) {
             overFifteen++;
         }
     }
     cout << "There were " << overFifteen << " people who were older than 15." << endl;
 
-
-//Question 4
-
-    int finalGrade[] {85.8, 93.7, 76, 88.5, 100, 91.3}
+    // Question 4
+    double finalScores[] = {85.8, 93.7, 76, 88.5, 100, 91.3};
+    int totalScores = sizeof(finalScores) / sizeof(finalScores[0]);
+    double avgScore = computeAverage(finalScores, totalScores);
+    
+    cout << "The average of final scores was: " << fixed << setprecision(1) << avgScore << endl;
     return 0;
 }
